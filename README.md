@@ -460,7 +460,7 @@ EOF
 
 > **Screenshot 6:** Take a screenshot showing the output of the Task 3 SQLite query — the four rows with sensor statistics — and insert it here.
 >
-> `[insert screenshot]`
+> https://github.com/amendabbech/DBMS_01/blob/6df848d5bbf89d4cc3151729a8f9890c7b393479/terminal%206.png
 
 ### Questions for Task 3
 
