@@ -466,15 +466,23 @@ EOF
 
 **Question 3.1:** The `awk` solution initialises `min=9999` and `max=-9999`. What would happen if all temperature values in the dataset were greater than 9999? How could the initialisation be made more robust?
 
-> *Your answer:*
+> If all temperature values were greater than 9999, the minimum would remain 9999, which is incorrect, because no value would be smaller than the initial value.
+A more robust approach is to initialise the variables with the first actual data value or to set them dynamically when processing the first record of each sensor.
 
 **Question 3.2:** The SQL solution uses `GROUP BY sensor_id`. What would the query return *without* this clause — i.e. if you ran `SELECT sensor_id, MIN(value_celsius), MAX(value_celsius), ROUND(AVG(value_celsius), 1) FROM readings`? Try it and describe the result.
 
-> *Your answer:*
+> Without GROUP BY, the query returns a single row containing the overall minimum, maximum, and average across all sensors. The sensor_id column would show an arbitrary value from the dataset, because it is not aggregated or grouped.
 
 **Question 3.3:** Extend the SQL query with an additional column `COUNT(*) AS num_readings` that shows the total number of measurements for each sensor. Write the complete extended query here.
 
-> *Your answer (extended SQL query):*
+> SELECT sensor_id,
+       MIN(value_celsius) AS min_temp,
+       MAX(value_celsius) AS max_temp,
+       ROUND(AVG(value_celsius), 1) AS avg_temp,
+       COUNT(*) AS num_readings
+FROM readings
+GROUP BY sensor_id
+ORDER BY sensor_id;
 
 ---
 
