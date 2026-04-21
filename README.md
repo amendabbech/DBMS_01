@@ -324,9 +324,13 @@ Caveats: floating-point comparison in `awk` works here, but breaks silently if t
 
 ```sql
 SELECT timestamp, sensor_id, value_celsius
+
 FROM   readings
+
 WHERE  value_celsius > 25.0
+
   AND  timestamp LIKE '2026-03-%'
+
 ORDER  BY value_celsius DESC;
 ```
 
