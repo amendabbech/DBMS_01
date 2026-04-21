@@ -199,7 +199,7 @@ echo "Import complete."
 
 > **Screenshot 3:** Take a screenshot showing the successful execution of the import script and the result of the `COUNT(*)` query, and insert it here.
 >
-> `[insert screenshot]`
+> https://github.com/amendabbech/DBMS_01/blob/6f1582343041e4b1aed7901c28e81854f1b8f132/Terminal%203.png
 
 ---
 
