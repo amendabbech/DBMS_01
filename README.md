@@ -268,7 +268,7 @@ EOF
 
 > **Screenshot 4:** Take a screenshot showing the output of the Task 1 SQLite query (the first and last few rows are sufficient), and insert it here.
 >
-> `[insert screenshot]`
+> https://github.com/amendabbech/DBMS_01/blob/5bfaa076853fe93d05d14cd407fb8416af42eee2/terminal%204.png
 
 ### Questions for Task 1
 
