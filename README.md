@@ -364,16 +364,17 @@ EOF
 
 **Question 2.1:** The shell solution filters by date using `grep -rh "2026-03"`. What problem could arise if a sensor value happened to contain the string `2026-03` — for example as part of an error note? How does the SQL solution handle this problem?
 
-> *Your answer:*
+> The shell solution may return incorrect results because grep searches for the string anywhere in the line. If the string appears in another field, such as a sensor value or note, unrelated rows could be included.
+The SQL solution avoids this problem by applying the filter specifically to the timestamp column, ensuring that only rows with matching dates are selected
 
 **Question 2.2:** The SQL solution uses `timestamp LIKE '2026-03-%'` for the date filter instead of a proper date function. Name one advantage and one disadvantage of this approach.
 
-> *Your answer:*
+> Advantage: The LIKE approach is simple and does not require converting the data type.
+Disadvantage: It relies on the timestamp being stored in a specific format and is less flexible than proper date functions.
 
 **Question 2.3:** The SQL solution returns results sorted by `ORDER BY value_celsius DESC`. The shell solution does not include this sorting. Extend the shell solution to also sort by temperature in descending order and write your command here.
 
-> *Your answer (extended shell command):*
-
+> grep -rh "2026-03" sensordata/T02_*.csv | grep -v "^timestamp" | sort -t',' -k4 -nr 
 ---
 
 ## Task 3 — Per-sensor statistics: min, max, and average temperature
