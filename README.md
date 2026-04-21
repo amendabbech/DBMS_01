@@ -516,7 +516,7 @@ SQL is called a *declarative* language: you describe *what* you want, not *how* 
 
 > **Screenshot 7:** Take a final screenshot of your terminal showing the SQLite prompt with a query of your own invention on the `readings` table — one you came up with yourself that goes beyond the tasks above — and insert it here.
 >
-> `[insert screenshot]`
+> https://github.com/amendabbech/DBMS_01/blob/d8a39d3c357da64ae5b13f644abcd21d81b99ad7/terminal%207.png
 
 ---
 
