@@ -276,15 +276,17 @@ Answer the following questions in your own words and add your answers directly b
 
 **Question 1.1:** Why is `grep -v "^timestamp"` needed in the shell solution even though the files are already filtered with `grep -h "T02"`? Could this step be omitted? Justify your answer.
 
-> *Your answer:*
+> grep -v "^timestamp" removes the header line of the CSV files. grep -h "T02" only filters by content and does not guarantee that headers are excluded. Therefore, this step ensures correct data processing. It can only be omitted if it is certain that the header will never match the filter condition.
 
 **Question 1.2:** The shell solution uses `sensordata/T02_*.csv` as a file pattern, even though `grep -h "T02"` already filters for `T02`. Why is the file pattern still important — and what would happen if you used `sensordata/*.csv` instead?
 
-> *Your answer:*
+> The file pattern sensordata/T02_*.csv restricts the input to only files that belong to sensor T02. This improves efficiency and ensures that only relevant files are processed.
+Although grep -h "T02" filters the content, using sensordata/*.csv would process all files first, including unrelated ones, which is less efficient. It could also lead to incorrect results if other files contain the string "T02" in a different context.
 
 **Question 1.3:** The SQL solution uses `ORDER BY timestamp` even though `timestamp` is stored as type `TEXT`. Why does chronological sorting still work correctly? Under what condition would it fail?
 
-> *Your answer:*
+> Chronological sorting works because the timestamp values are stored in a format where lexicographical order matches chronological order.
+It would fail if the format does not preserve this property, meaning the string order would no longer correspond to the actual time order.
 
 ---
 
@@ -356,7 +358,7 @@ EOF
 
 > **Screenshot 5:** Take a screenshot showing the output of the Task 2 SQLite query and insert it here.
 >
-> `[insert screenshot]`
+> https://github.com/amendabbech/DBMS_01/blob/e867536a30ad004f8213e1e347cb06bba38c5952/Terminal%205.png
 
 ### Questions for Task 2
 
