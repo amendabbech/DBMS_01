@@ -61,7 +61,7 @@ If any of the above commands return `command not found`, resolve the installatio
 
 > **Screenshot 1:** Take a screenshot of your terminal showing all four successful version checks and insert it here.
 >
-> `[insert screenshot]`
+> https://github.com/amendabbech/DBMS_01/blob/fede29526c1514ac20cd15920f70de1cd597e7c5/Terminal%201.png
 
 ---
 
