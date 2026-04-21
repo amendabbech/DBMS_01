@@ -497,22 +497,22 @@ After completing all three tasks, answer the following questions:
 **Question A — Writing effort:**
 Which approach was easier to write correctly on the first try? Explain which properties of each language contributed to this.
 
-> *Your answer:*
+SQL was easier to write correctly on the first try because it is declarative: you describe what result you want, not the steps to compute it. The shell solution is imperative and requires manually handling file reading, parsing, and aggregation, which increases complexity and chances for errors.
 
 **Question B — Extensibility:**
 What would you need to change in the shell solution if a fifth sensor `T05` were added? What about the SQL solution? Which approach scales better — and why?
 
-> *Your answer:*
+> For a fifth sensor (T05), the shell solution would likely need code changes wherever sensors are hardcoded or explicitly checked. The SQL solution would not need changes if sensors are stored as data in a column. SQL scales better because it is data-driven, so adding new sensors does not require rewriting logic.
 
 **Question C — Performance:**
 The shell solution reads files from disk on every invocation. A database can cache frequently queried data in memory. What does this mean for performance with 10 000 sensors and multi-year measurement data?
 
-> *Your answer:*
+> With 10,000 sensors and multi-year data, the shell solution becomes slow because it repeatedly reads files from disk. A database performs better because it can cache data in memory and use indexes to avoid full scans, making queries much faster and more scalable.
 
 **Question D — Declarative vs. imperative:**
 SQL is called a *declarative* language: you describe *what* you want, not *how* to compute it. Bash/awk, by contrast, are *imperative*: you write step by step how the result is to be computed. In which of the three tasks did you feel this difference most clearly? Justify your choice.
 
-> *Your answer:*
+> The difference was clearest in aggregation tasks (like averages or grouping). SQL allowed writing a single query, while shell required step-by-step processing (reading, filtering, summing). This made SQL feel more concise and declarative, while shell was more manual and procedural.
 
 > **Screenshot 7:** Take a final screenshot of your terminal showing the SQLite prompt with a query of your own invention on the `readings` table — one you came up with yourself that goes beyond the tasks above — and insert it here.
 >
